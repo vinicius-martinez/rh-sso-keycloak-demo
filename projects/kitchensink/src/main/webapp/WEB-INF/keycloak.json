@@ -1,8 +1,7 @@
 {
-  "realm": "demo",
-  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk5aDZy0WLnQdfSPERuUUgjS9hxFyV/l1jxH2ItLyXY4cCLmaolhSTIFkbtzbUtVaP03/dM/lqvM4uMHwJLMpLDspis7NnR7j+IhJPFpyuYnw1YI7Ulw0fqlSaHVlsgNDtsTgxHFQaxeJZicuusmqYRAd+dA+NDjX7pDPCjiyiwxB+Ph8qP/LoNSB/21JUk/Vhi1IfiPCi1vR+P8AFP39XHoXDuGFr/UgpQ2Wya+Cr8RV7TvTQAgWziNek8Nt15DBM1Oz7ozcAbCZJ9f4vaTjiCTE76GoCyn07Lv9+NJ+IbSohf8+Z4vIIjajs5l8iL/tnJeW7ZQJZUxJBDWWQmgIwwIDAQAB",
-  "auth-server-url": "http://keycloak.example.test:8080/auth",
-  "ssl-required": "external",
-  "resource": "jboss-kitchensink",
+  "realm": "santander",
+  "auth-server-url": "http://nlogin.apps.ocp.rhbrlab.com",
+  "ssl-required": "none",
+  "resource": "jboss",
   "public-client": true
 }

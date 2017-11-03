@@ -23,19 +23,19 @@ RUN cd ${HOME} \
     && rm jboss-eap-$EAP_VERSION.zip
 
 #Add Postgres JDBC Driver
-COPY support/postgresql*.jar ${HOME}
-COPY support/add-jdbc-driver.cli ${HOME}
-RUN ${JBOSS_HOME}/bin/jboss-cli.sh --file=${HOME}/add-jdbc-driver.cli
+#COPY support/postgresql*.jar ${HOME}
+#COPY support/add-jdbc-driver.cli ${HOME}
+#RUN ${JBOSS_HOME}/bin/jboss-cli.sh --file=${HOME}/add-jdbc-driver.cli
 
 #Add Keycloak adapter
-COPY support/keycloak-*-adapter*.zip ${HOME}
+#COPY support/keycloak-*-adapter*.zip ${HOME}
+COPY support/rh-sso-7.1.0-eap7-adapter.zip ${HOME}
 #OIDC adapter
-RUN unzip -uo ${HOME}/keycloak-wildfly-adapter*.zip -d ${JBOSS_HOME}
+RUN unzip -uo ${HOME}/rh-sso-7.1.0-eap7-adapter.zip -d ${JBOSS_HOME}
 #SAML adapter
 #RUN unzip -uo ${HOME}/keycloak-saml-wildfly-adapter*.zip -d ${JBOSS_HOME}
 WORKDIR ${JBOSS_HOME}/bin
 RUN ./jboss-cli.sh --file=adapter-install-offline.cli
-
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
